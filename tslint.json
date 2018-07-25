@@ -6,24 +6,14 @@
     "interface-name": [true, "never-prefix"],
     "no-implicit-dependencies": [true, "dev"],
 
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "member-access": false,
     "no-var-keyword": true,
     "no-parameter-reassignment": true,
 
-    "readonly-keyword": true,
-    "readonly-array": true,
-    "no-let": true,
-    "no-object-mutation": true,
-    "no-delete": true,
-    "no-method-signature": true,
-
-    "no-this": true,
-    "indent": [true, "spaces", 2],
-    "tslint.autoFixOnSave": true,
-    "no-mixed-interface": true,
-    "no-expression-statement": [
-      true,
-      { "ignore-prefix": ["console.", "process.exit"] }
-    ],
-    "no-if-statement": true
+    "no-this-assignment": false,
+    "member-ordering": false,
+    "indent": [true, "spaces", 2]
   }
 }

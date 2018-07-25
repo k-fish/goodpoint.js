@@ -5,10 +5,11 @@ export default class Arrow {
   from: ElementWrapper;
   to: ElementWrapper;
 
-  constructor({ from, to }: { from: Element, to: Element }) {
-    const _from = new ElementWrapper({ element: from });
-    const _to = new ElementWrapper({ element: to });
-    Object.assign(this, { from: _from, to: _to });
+  constructor({ from, to }: { from: Element; to: Element }) {
+    Object.assign(this, {
+      from: new ElementWrapper({ element: from }),
+      to: new ElementWrapper({ element: to })
+    });
   }
 
   get connectionPair() {

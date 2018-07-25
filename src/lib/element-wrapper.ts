@@ -3,7 +3,7 @@ import Point from './point';
 
 export default class ElementWrapper {
   private element: Element;
-  private customAnchors: Function;
+  private customAnchors: any;
 
   constructor({ element, customAnchors = () => undefined }) {
     Object.assign(this, { element, customAnchors });

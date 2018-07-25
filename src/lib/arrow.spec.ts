@@ -1,6 +1,6 @@
 import { test } from 'ava';
-import Arrow from './arrow';
 import browserEnv from 'browser-env';
+import Arrow from './arrow';
 
 const fakeElement = (height, width, top, left) => {
   const div = document.createElement('div');
@@ -11,18 +11,18 @@ const fakeElement = (height, width, top, left) => {
   div.style.left = `${left}px`;
 
   div.getBoundingClientRect = () => {
-    return <ClientRect>{
-      top,
-      left,
-      width,
-      height,
+    return {
       bottom: top + height,
-      right: left + width
-    }
+      height,
+      left,
+      right: left + width,
+      top,
+      width
+    };
   };
 
-  return div
-}
+  return div;
+};
 
 test('renders', async t => {
   browserEnv();
