@@ -39,7 +39,28 @@ test('renders', async t => {
 
   const html = document.documentElement.innerHTML;
 
+  t.is(arrow.connection.curve.baseLine.distance, 289.2567387313432);
+
   t.is(arrow.connection.line.distance, 329.2567387313432);
+
+  t.is(arrow.connection.controlAnchorLine.distance, 82.3141846828358);
+  t.is(arrow.connection.startControlLine.distance, 92.03005623164641);
+  t.is(arrow.connection.endControlLine.distance, 138.0450843474696);
+
+  t.is(
+    arrow.connection.curve.baseLine.linePath,
+    'M122.14077691496625 103.12825791802678  360.21814018544165 267.4104237172109'
+  );
+  t.is(arrow.connection.curve.start.top, 103.12825791802678);
+  t.is(arrow.connection.curve.start.left, 122.14077691496625);
+  t.is(
+    arrow.connection.curve.start.toStyle,
+    'top: 103.12825791802678px; left: 122.14077691496625px;'
+  );
+  t.is(
+    arrow.connection.curve.start.clone().toStyle,
+    'top: 103.12825791802678px; left: 122.14077691496625px;'
+  );
 
   t.false(html.includes('NaN'));
   t.false(html.includes('undefined'));

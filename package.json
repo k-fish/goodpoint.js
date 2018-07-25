@@ -75,7 +75,7 @@
     "typescript": "^2.9.1"
   },
   "ava": {
-    "failFast": true,
+    "failFast": false,
     "files": [
       "build/main/**/*.spec.js"
     ],

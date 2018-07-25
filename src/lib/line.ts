@@ -16,10 +16,6 @@ export default class Line {
     return this.end.y - this.start.y;
   }
 
-  get slope() {
-    return this.dy / this.dx;
-  }
-
   get angle() {
     return Math.atan2(this.dx, this.dy);
   }

@@ -59,9 +59,7 @@ export default class ElementWrapper {
   closestPairTo(toWrapper: ElementWrapper) {
     const from = this.anchors;
     const to = toWrapper.anchors;
-    if (!from || !to) {
-      return { from: null, to: null };
-    }
+
     let minDistance = Number.MAX_VALUE;
     let pair;
     from.forEach(a =>
