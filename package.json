@@ -1,6 +1,6 @@
 {
   "name": "goodpoint.js",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Generates svg arrows between dom elements",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
