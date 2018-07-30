@@ -82,4 +82,16 @@ export default class ElementWrapper {
   get anchors() {
     return this._customAnchors() || this.defaultAnchors;
   }
+
+  intersects(other: ElementWrapper) {
+    const thisBoundingRect = this.element.getBoundingClientRect();
+    const otherBoundingRect = other.element.getBoundingClientRect();
+
+    return (
+      thisBoundingRect.left <= otherBoundingRect.right &&
+      otherBoundingRect.left <= thisBoundingRect.right &&
+      thisBoundingRect.top <= otherBoundingRect.bottom &&
+      otherBoundingRect.top <= thisBoundingRect.bottom
+    );
+  }
 }

@@ -30,8 +30,8 @@ test('renders', async t => {
   const div2 = fakeElement(100, 100, 314, 512);
   document.body.appendChild(div1);
   document.body.appendChild(div2);
-
   const arrow = new Arrow({ from: div1, to: div2 });
+
   const svg = document.createElement('div');
   svg.innerHTML = arrow.connection.simpleSVG;
 
@@ -66,4 +66,18 @@ test('renders', async t => {
   t.false(html.includes('undefined'));
 
   t.snapshot(html);
+});
+
+test('check if divs are intersecting', async t => {
+  const div1 = fakeElement(100, 100, 777, 23);
+  const div2 = fakeElement(100, 100, 777, 23);
+
+  const error = t.throws(() => {
+    new Arrow({ from: div1, to: div2 }); // tslint:disable-line
+  }, Error);
+
+  t.is(
+    error.message,
+    "Arrow can't be drawn - The From and To elements are intersecting"
+  );
 });
